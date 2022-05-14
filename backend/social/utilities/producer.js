@@ -1,6 +1,6 @@
 const { Kafka } = require('kafkajs');
 const { initConsumer } = require('./consumer');
-const falso = require('falso');
+const falso = require('@ngneat/falso');
 
 /***************************
  * DO NOT CHANGE THIS FILE *
@@ -53,9 +53,9 @@ const initProducer = async () => {
 								city: falso.randCity(),
 								state: falso.randState(),
 								country: falso.randCountry(),
-								zip_code: falso.randZipCode(),
+								zipCode: falso.randZipCode(),
 								phone: falso.randPhoneNumber(),
-								web_url: falso.randDomainName()
+								webUrl: falso.randDomainName()
 							}
 						}),
 					}
@@ -76,18 +76,18 @@ const initProducer = async () => {
 						value: JSON.stringify({
 							event_name: 'user_created',
 							properties: {
-								id: falso.datatype.number({ min: 100000, max: 999999 }),
-								first_name: falso.randFirstName(),
-								last_name: falso.randLastName(),
+								id: falso.randNumber({ min: 100000, max: 999999 }),
+								firstName: falso.randFirstName(),
+								lastName: falso.randLastName(),
 								department: falso.randWord(),
 								designation: falso.randWord(),
-								tenant_id: id,
-								image_url: falso.randImg(),
+								tenantId: id,
+								imageUrl: falso.randImg(),
 								city: falso.randCity(),
 								country: falso.randCountry(),
 								bio: falso.randSentence(),
-								social_links: {facebook: 'https://facebook.com/'},
-								employee_id: falso.randNumber(),
+								socialLinks: {facebook: 'https://facebook.com/'},
+								employeeId: falso.randNumber(),
 							}
 						}),
 					}
