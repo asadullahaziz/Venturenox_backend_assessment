@@ -1,6 +1,6 @@
 const { Kafka } = require('kafkajs');
 const { initConsumer } = require('./consumer');
-const faker = require('faker');
+const falso = require('falso');
 
 /***************************
  * DO NOT CHANGE THIS FILE *
@@ -33,7 +33,7 @@ const initProducer = async () => {
 		var tenantIds = [];
 
 		Array.from(Array(10)).map(async () => {
-			tenantIds.push(faker.datatype.number({ min: 100000, max: 999999 }));
+			tenantIds.push(falso.randNumber({ min: 100000, max: 999999 }));
 		});
 
 		tenantIds.map(async (id) => {
@@ -48,14 +48,14 @@ const initProducer = async () => {
 							event_name: 'tenant_created',
 							properties: {
 								id: id,
-								name: faker.company.companyName(),
-								address: faker.address.streetAddress(),
-								city: faker.address.city(),
-								state: faker.address.state(),
-								country: faker.address.country(),
-								zip_code: faker.address.zipCode(),
-								phone: faker.phone.phoneNumber(),
-								web_url: faker.internet.domainName()
+								name: falso.randCompanyName(),
+								address: falso.randAddress(),
+								city: falso.randCity(),
+								state: falso.randState(),
+								country: falso.randCountry(),
+								zip_code: falso.randZipCode(),
+								phone: falso.randPhoneNumber(),
+								web_url: falso.randDomainName()
 							}
 						}),
 					}
@@ -76,18 +76,18 @@ const initProducer = async () => {
 						value: JSON.stringify({
 							event_name: 'user_created',
 							properties: {
-								id: faker.datatype.number({ min: 100000, max: 999999 }),
-								first_name: faker.name.firstName(),
-								last_name: faker.name.lastName(),
-								department: faker.lorem.word(),
-								designation: faker.lorem.word(),
+								id: falso.datatype.number({ min: 100000, max: 999999 }),
+								first_name: falso.randFirstName(),
+								last_name: falso.randLastName(),
+								department: falso.randWord(),
+								designation: falso.randWord(),
 								tenant_id: id,
-								image_url: faker.random.image(),
-								city: faker.address.city(),
-								country: faker.address.country(),
-								bio: faker.lorem.sentence(),
+								image_url: falso.randImg(),
+								city: falso.randCity(),
+								country: falso.randCountry(),
+								bio: falso.randSentence(),
 								social_links: {facebook: 'https://facebook.com/'},
-								employee_id: faker.datatype.number(),
+								employee_id: falso.randNumber(),
 							}
 						}),
 					}
