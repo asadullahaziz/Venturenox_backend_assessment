@@ -12,7 +12,7 @@ datasource db {
 
 model Tenant {
   id             Int            @id @default(autoincrement())
-  Name           String         @db.VarChar(255)
+  name           String         @db.VarChar(255)
   address        Json           
   city           String         @db.VarChar(255)
   state          String         @db.VarChar(255)
@@ -20,6 +20,7 @@ model Tenant {
   zipCode        String         @db.VarChar(255)
   phone          String         @db.VarChar(255)
   webUrl         String         @db.VarChar(255)
+  users          User[]
 }
 
 model User {
@@ -34,5 +35,6 @@ model User {
   bio            String?        @db.VarChar(255)
   socialLinks    Json?       
   employeeId     Int
+  tenant         Tenant         @relation(fields: [tenantId], references: [id])
   tenantId       Int
 }

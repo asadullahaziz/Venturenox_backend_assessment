@@ -5,6 +5,7 @@
   "main": ".eslintrc.js",
   "scripts": {
     "start": "node app.js",
+    "dev": "nodemon app.js",
     "migrate": "npx prisma migrate dev --name init",
     "prismaGenerate": "npx prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +17,7 @@
     "express": "^4.18.1"
   },
   "devDependencies": {
+    "nodemon": "^2.0.16",
     "prisma": "^3.14.0"
   }
 }

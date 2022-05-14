@@ -2,11 +2,11 @@
 
 # set -e
 
-# echo "Running database migrations"
-# npm migrate
+echo "Running database migrations"
+npm run migrate
 
 # echo "Seeding database"
-# npm prismaGenerate
+npm run prismaGenerate
 
 echo "Starting server"
 npm start
