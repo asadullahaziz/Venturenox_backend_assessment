@@ -6,7 +6,7 @@
 # npm migrate
 
 # echo "Seeding database"
-# npm seed
+# npm prismaGenerate
 
 echo "Starting server"
 npm start
