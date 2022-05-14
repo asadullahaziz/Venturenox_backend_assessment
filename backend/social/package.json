@@ -1,36 +1,21 @@
 {
-	"name": "sample",
-	"version": "1.0.0",
-	"description": "",
-	"main": "app.js",
-	"scripts": {
-		"start": "node app.js",
-		"migrate": "knex migrate:latest",
-		"makemigrate": "knex --knexfile=./database/knexfile.js migrate:make",
-		"makeseed": "knex --knexfile=./database/knexfile.js seed:make",
-		"seed": "knex seed:run",
-		"lint": "eslint '**/*.js'"
-	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"express": "^4.17.1",
-		"faker": "^5.5.3",
-		"jsonwebtoken": "^8.5.1",
-		"kafkajs": "^1.15.0",
-		"knex": "^0.95.6",
-		"node-rdkafka": "^2.12.0",
-		"objection": "^2.2.15",
-		"pg": "^8.6.0"
-	},
-	"devDependencies": {
-		"eslint": "^7.18.0",
-		"husky": "^4.3.8"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "yarn lint",
-			"pre-push": "yarn lint"
-		}
-	}
+  "name": "social",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "start": "node app.js",
+    "migrate": "npx prisma migrate dev --name init",
+    "prismaGenerate": "npx prisma generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.14.0",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "prisma": "^3.14.0"
+  }
 }

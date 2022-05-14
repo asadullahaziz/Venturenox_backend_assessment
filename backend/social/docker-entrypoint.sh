@@ -1,12 +1,12 @@
-#!/bin/bash
+!/bin/bash
 
-set -e
+# set -e
 
 # echo "Running database migrations"
-# yarn migrate
+# npm migrate
 
 # echo "Seeding database"
-# yarn seed
+# npm seed
 
 echo "Starting server"
-yarn start
+npm start

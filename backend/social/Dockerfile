@@ -12,5 +12,5 @@ RUN apk --no-cache add \
 RUN apk add --no-cache --virtual .build-deps gcc zlib-dev libc-dev bsd-compat-headers py-setuptools
 WORKDIR /usr/app
 COPY package.json .
-RUN yarn install
+RUN npm install
 COPY . .
